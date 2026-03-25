@@ -14,7 +14,7 @@ mobile/mobile.scss  — Mobile-only overrides
 scss/variables.scss — Mixins, CSS custom properties, gradient definitions
 scss/sidebar.scss   — Sidebar-specific styles
 scss/chat.scss      — Chat drawer/panel styles
-BRAND-NOTES.md      — Brand colour palette, design principles, branding project notes
+BRAND-NOTES.md      — How bc-brand values map to Discourse (palettes, categories, SCSS)
 README.md           — Installation, configuration, and development docs
 ```
 
@@ -73,15 +73,11 @@ CSS changes often have unintended side effects in Discourse because:
 
 ## Brand Context
 
-- **BCF brand colour:** Teal (#54C4B6 light, #2E8B82 dark)
-- **Online discussions:** Purple (#503F99 light, #8678C2 dark)
-- **Course-related:** Orange (#FBB050)
-- **Partners:** Blue (#4495D1)
-- **Highlight/focus:** Teal (#5BC3B6) — used for both light and dark modes
-- **Danger:** #C42D39 (light), #D44A4A (dark)
-- **Love:** #C42D39 (light), #E05555 (dark)
-- **Full palette and design principles:** see BRAND-NOTES.md
-- **Fonts:** Lato (headings) + Open Sans (body) — chosen for dyslexia accessibility over brand-specified Livvic
+The canonical brand guide and design tokens live in the **[bc-brand](https://github.com/Better-Conversations/bc-brand)** repository. This theme consumes those brand values through Discourse's palette system and hardcoded SCSS — see `BRAND-NOTES.md` for how the mapping works.
+
+- **Brand source of truth:** `Better-Conversations/bc-brand` (colours, typography, design tokens)
+- **Discourse-specific brand mapping:** `BRAND-NOTES.md` in this repo
+- **Fonts:** Lato (headings) + Open Sans (body) — set in Discourse admin, not theme CSS
 - **Related Linear issue for branding project:** BCF-678
 - **WCAG accessibility issue:** BCTT-783
 

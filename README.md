@@ -171,12 +171,7 @@ Use Discourse core welcome banner functionality instead:
 
 ### Category Colours
 
-Colours use the official BCF brand palette from the brand guidelines:
-
-**Primary:** Purple `#503F99`, Blue `#4495D1`, Teal `#54C4B6`, Red `#EF404E`
-**Secondary:** Orange `#FBB050`, Green `#A8D381`, Coral `#E8635A`, Sky blue `#6BCBDE`
-
-> **Note:** Coral replaces Lavender (#BD88BE) from the original brand guidelines.
+Colours come from the **[bc-brand](https://github.com/Better-Conversations/bc-brand)** repository (the canonical brand toolkit). See `BRAND-NOTES.md` in this repo for how brand tokens map to Discourse.
 
 Set the **category badge colour** for each category in **Admin > Categories > [category] > Settings**:
 
