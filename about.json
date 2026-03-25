@@ -11,9 +11,9 @@
       "header_background": "ffffff",
       "header_primary": "111111",
       "highlight": "cfff4d",
-      "danger": "EF404E",
-      "success": "A8D381",
-      "love": "EF404E",
+      "danger": "C42D39",
+      "success": "5B8A2C",
+      "love": "C42D39",
       "selected": "e9e9e9",
       "hover": "f2f2f2"
     },
@@ -24,10 +24,10 @@
       "quaternary": "FBB050",
       "header_background": "202020",
       "header_primary": "e0e0e0",
-      "highlight": "A8D381",
-      "danger": "EF404E",
+      "highlight": "fce775",
+      "danger": "F47078",
       "success": "A8D381",
-      "love": "EF404E",
+      "love": "F47078",
       "selected": "1c302b",
       "hover": "1c302b"
     }
