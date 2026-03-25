@@ -144,8 +144,11 @@
 .category-description a,
 .d-editor-preview a {
   text-decoration: underline;
+  text-decoration-color: rgba(var(--primary-rgb), 0.3);
+  text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   &:hover {
+    text-decoration-color: currentColor;
     text-decoration-thickness: 2px;
   }
 }
