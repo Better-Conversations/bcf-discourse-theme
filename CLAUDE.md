@@ -31,8 +31,11 @@ README.md           — Installation, configuration, and development docs
 
 - **No preview server** — you cannot run Discourse locally. Changes must be tested on the live instance.
 - **`discourse_theme watch`** is the fastest iteration loop — it live-syncs files to Discourse. See README for setup.
+- **Dev theme required** — before running `discourse_theme watch`, install a separate dev theme in Discourse pointing at the `dev` branch. Only you will see changes.
+- **Colour palettes don't sync** — changes to `about.json` colour values are NOT picked up by `discourse_theme watch` or Git updates. Palettes are only auto-created on first install. If you change a colour in `about.json`, you must also update it manually in Admin > Appearance > Color palettes.
 - **Brace counting** — always verify `grep -c '{' file.scss` matches `grep -c '}' file.scss` after edits. Discourse silently drops malformed SCSS.
-- **Selector specificity** — Discourse's own styles are aggressive. Many overrides need `!important`. Check if your rule is actually taking effect before adding more CSS.
+- **Selector specificity** — Discourse's own styles are aggressive. Prefer overriding Discourse CSS variables (e.g. `--d-nav-*`) over fighting selectors with `!important`.
+- **Don't override button colours globally** — Discourse handles button colours via its palette system. Only override `border-radius`. Global colour overrides cause invisible buttons on admin pages and dark mode.
 - **Dark mode** — never use `prefers-color-scheme` media queries. Discourse has its own theme switcher that sets CSS variables. Use `var(--primary)`, `var(--secondary)`, etc.
 - **`@mixin bcf-card-bg`** — uses `var(--header_background)` which works in both light (#ffffff) and dark (#202020) modes.
 
@@ -65,6 +68,8 @@ CSS changes often have unintended side effects in Discourse because:
 3. **Sidebar styling leaks** — rules targeting `.sidebar-wrapper` can affect admin sidebar too. Scope carefully.
 4. **Font Awesome versions** — Discourse may use FA5 or FA6 depending on version. Check which is loaded before using `font-family: "Font Awesome 6 Free"` hacks.
 5. **`prefers-color-scheme` doesn't work** — Discourse uses its own dark mode toggle, not the OS-level one. Always use Discourse CSS variables.
+6. **Colour palettes don't live-sync** — `about.json` palette values are only read on first theme install. Any colour changes need to be made both in `about.json` (for future installs) AND manually in Admin > Appearance > Color palettes (for the live site).
+7. **Global button colour overrides break things** — Never override `.btn-default`, `.btn[href]`, or `a { color }` globally. These cause invisible text on admin pages and dark mode. Only override `border-radius`.
 
 ## Brand Context
 
