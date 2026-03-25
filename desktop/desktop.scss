@@ -1,0 +1,7 @@
+@import "variables";
+
+// Balance content padding — sidebar provides left gap, match on right
+#main-outlet {
+  padding-left: 1em;
+  padding-right: 1.5em;
+}

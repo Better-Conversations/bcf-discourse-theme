@@ -1,0 +1,15 @@
+
+
+{{#if this.isHomepage}}
+  {{!-- Custom content for homepage or categories page --}}
+    {{#if this.isLoading}}
+        {{conditional-loading-spinner condition=this.isLoading}}
+    {{else}}
+    <div class="latest-topics-snippet">
+            <h3 class="component-heading">Latest Discussions</h3>
+        {{topic-list topics=this.topics showPosters=true}}
+    </div>
+    {{/if}}
+{{/if}}
+
+

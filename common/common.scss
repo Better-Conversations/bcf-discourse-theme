@@ -1,0 +1,577 @@
+@import "variables";
+@import "sidebar";
+@import "chat";
+
+// Fonts are set in Admin > Appearance > Fonts:
+//   Base font: Open Sans
+//   Heading font: Lato
+
+.d-editor-textarea-wrapper,
+.select-kit-header {
+  border-radius: var(--bcf-border-radius);
+}
+
+:root {
+  --d-input-border-radius: var(--bcf-border-radius);
+}
+
+.d-header {
+  height: 5em;
+  box-shadow: none;
+}
+
+.alert.alert-info {
+  border-radius: var(--bcf-border-radius);
+}
+
+// Hide background decorations on featured cards component
+.above-main-container-outlet.featured-cards::before,
+.above-main-container-outlet.featured-cards::after {
+  display: none;
+}
+
+.homepage-feature-topic .homepage-feature-topic-image {
+  height: 300px;
+}
+
+.homepage-feature-topic-wrapper h2 {
+  text-align: left;
+  a,
+  a:visited {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--primary) !important;
+  }
+}
+
+.custom-homepage-columns {
+  margin: 2em 0 2em 0;
+  padding: 0;
+  .col {
+    position: relative;
+    border-radius: var(--bcf-border-radius);
+    @include bcf-card-bg;
+    padding: 2em 2em 1em;
+    border-top: 4px solid var(--tertiary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+    .header-wrapper {
+      background-color: transparent;
+      a h2 {
+        color: var(--primary);
+      }
+      .btn-primary {
+        display: none;
+      }
+    }
+    .btn-more {
+      color: var(--secondary);
+      background: var(--tertiary);
+      transition: all 0.3s linear;
+      border-radius: var(--bcf-border-radius);
+      text-transform: uppercase;
+      border: 1px solid var(--tertiary);
+      &:hover {
+        color: var(--secondary);
+        background: var(--tertiary-hover);
+      }
+    }
+  }
+
+  .loading-container:not(:has(.spinner)) {
+    min-height: unset;
+  }
+}
+
+.navigation-categories .search-banner {
+  border-radius: var(--bcf-border-radius);
+ 
+  box-sizing: border-box;
+ 
+  margin: 1em auto;
+  max-width: 1110px;
+}
+
+.navigation-container {
+  margin-top: 2em;
+  .category-breadcrumb{
+    display: none
+  }
+  .fk-d-button-tooltip{
+    display: block
+  }
+}
+
+.category-box-inner {
+  @include bcf-card-bg;
+}
+
+.navigation-topics {
+  .container.list-container {
+    border-radius: var(--bcf-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 2em;
+    @include bcf-card-bg;
+    border-top: 4px solid var(--tertiary);
+    margin-top: 0.8em;
+  }
+}
+
+.search-widget .search-context {
+  padding: 10px;
+  background-color: var(--tertiary-medium);
+  border-radius: var(--bcf-border-radius);
+}
+
+.search-menu .search-context .show-help {
+  color: var(--primary-very-low);
+}
+
+.search-menu .search-input {
+  border: 0;
+}
+
+.menu-panel .d-label {
+  color: var(--primary);
+}
+
+// Removed global a { color } override — was too aggressive, let Discourse handle link colours
+
+.category-boxes {
+  display: grid;
+  grid-gap: 1.5em;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: var(--bcf-border-radius);
+  .category-box {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(var(--primary-rgb), 0.12);
+    border-left: 4px solid var(--category-badge-color);
+    background: var(--secondary);
+    border-radius: var(--bcf-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    .category-box-inner {
+      border: none;
+      padding: 0;
+      .category-details {
+        padding: 1.5em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // Make category icon larger and sit above the name
+        .badge-category__icon {
+          .d-icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 0.15em;
+          }
+        }
+
+        // Flex the heading so we can reorder lock to after the name
+        .category-box-heading h3 {
+          display: inline-flex;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        // Lock icon: move to after category name
+        .d-icon-lock {
+          font-size: 0.8em;
+          color: var(--primary-medium);
+          margin-left: 0.25em;
+          order: 99;
+        }
+      }
+      .category-logo {
+        margin-top: 1em;
+      }
+    }
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .category-boxes.with-logos.with-subcategories {
+    grid-template-columns: 1fr;
+  }
+}
+
+.category-list-item.category {
+  border-radius: var(--bcf-border-radius);
+  border-right: 1px solid var(--primary-low) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin: 0 0.59em 2em 0.59em;
+  background: var(--primary-very-low);
+}
+
+@supports (--custom: property) {
+  .category-logo.aspect-image {
+    --max-height: 70px; // change 200 to the desired height
+  }
+}
+
+// Create topic button — just border-radius, let Discourse handle colours
+#create-topic {
+  border-radius: var(--bcf-border-radius);
+}
+
+.open .grippie {
+  background: var(--tertiary);
+}
+
+.options.toolbar-popup-menu-options {
+  button.single-select-header.dropdown-select-box-header {
+    background: transparent;
+    border-radius: none;
+    border: none;
+    &:hover {
+      background: var(--tertiary);
+      border-radius: 0;
+    }
+  }
+}
+
+.list-controls .combo-box .combo-box-header {
+  border: none;
+  border-radius: var(--bcf-border-radius);
+  @include bcf-card-bg;
+}
+
+// Removed .menu-panel .panel-body-bottom .btn colour overrides — let Discourse handle
+
+// Nav pills — override Discourse's own CSS variables for clean styling
+:root {
+  --d-nav-pill-border-radius: var(--bcf-border-radius);
+  --d-nav-color: var(--primary-medium);
+  --d-nav-color-hover: var(--primary);
+  --d-nav-bg-color-hover: var(--primary-very-low);
+  --d-nav-color-active: var(--secondary);
+  --d-nav-bg-color-active: var(--primary);
+}
+
+// Remove any borders/outlines that Discourse adds on top
+.nav-pills > li > a,
+.nav-pills > li > a.active,
+.nav-pills > li button,
+.nav-pills > li button.active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// Only apply border-radius to dropdown headers — no colour overrides
+.select-kit.dropdown-select-box .dropdown-select-box-header {
+  border-radius: var(--bcf-border-radius);
+}
+
+.d-editor-button-bar
+  .select-kit.dropdown-select-box
+  .dropdown-select-box-header {
+  background: transparent;
+  color: var(--primary-medium);
+  border: 1px solid transparent;
+  border-radius: 0;
+  svg {
+    color: currentColor;
+  }
+  &:hover {
+    color: var(--secondary);
+    background: var(--tertiary-hover);
+    border: 1px solid var(--tertiary-hover);
+    border-radius: var(--bcf-border-radius);
+  }
+}
+
+// Consistent icon sizing in buttons
+.btn .d-icon {
+  font-size: 0.9em;
+}
+
+// Only add border-radius on button hover — let Discourse handle colours
+.discourse-no-touch .btn:not(.btn-flat):hover,
+.discourse-no-touch .btn:not(.btn-flat).btn-hover {
+  border-radius: var(--bcf-border-radius);
+}
+
+.menu-panel .widget-link:hover,
+.menu-panel .widget-link:focus,
+.menu-panel .categories-link:hover,
+.menu-panel .categories-link:focus {
+  background-color: var(--tertiary-low);
+}
+
+// Only apply border-radius to btn-default globally — no colour overrides
+.btn-default {
+  border-radius: var(--bcf-border-radius);
+}
+
+.btn-primary {
+  border-radius: var(--bcf-border-radius);
+}
+
+.discourse-no-touch .btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+.create {
+  border-radius: var(--bcf-border-radius);
+}
+
+.select-kit .select-kit-row.is-selected {
+  background-color: var(--secondary-very-high);
+}
+
+.modal-inner-container,
+.edit-category-footer {
+  .btn-primary {
+    border-radius: var(--bcf-border-radius);
+  }
+}
+
+.user-menu .quick-access-panel li:hover {
+  background-color: var(--tertiary-low);
+}
+
+// Note: Global link/button colour overrides have been intentionally removed.
+// Discourse handles button colours natively via its colour palette system.
+
+summary.select-kit-header.single-select-header.dropdown-select-box-header {
+  padding: 0.5em;
+}
+
+.search-container .search-advanced-sidebar {
+  .search-advanced-title {
+    background: var(--tertiary);
+    color: var(--secondary);
+  }
+  .search-advanced-filters {
+    border: 1px dashed var(--tertiary);
+  }
+}
+
+// Control order of plugin connectors
+.search-banner {
+  display: none;
+}
+
+.showcased-topic-list {
+  display: none;
+}
+
+.bcf-component-extensions {
+  .search-banner,
+  .showcased-topic-list {
+    display: block;
+  }
+}
+
+
+.fk-d-button-tooltip{
+  display: none;
+}
+
+
+.latest-topics-snippet{
+.topic-list {
+  border-collapse: separate;
+  border-spacing: 0 0.25em;
+  display: contents;
+  .topic-list-header {
+    tr {
+      display: flex;
+      border-bottom: none;
+    }
+    display: contents;
+    .topic-list-data.default {
+      width: 63%;
+    }
+    .topic-list-data.posters {
+      width: 7%;
+      min-width: 66px;
+    }
+    .topic-list-data.posts {
+      width: 15%;
+    }
+    .topic-list-data.activity {
+      width: 15%;
+    }
+  }
+  
+  .topic-list-body {
+    display: contents;
+    .topic-list-item-separator {
+      width: 100%;
+      margin: 0.75em 0;
+      display: flex;
+      .topic-list-data {
+        width: 100%;
+      }
+    }
+    .topic-list-item {
+      width: 100%;
+      display: flex;
+      margin-bottom: 0.5em;
+      background-color: var(--secondary);
+      border: 1px solid rgba(var(--primary-rgb), 0.15);
+      border-radius: var(--bcf-border-radius);
+      position: relative;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      &.visited {
+        border: 1px solid rgba(var(--primary-rgb), 0.1);
+        .discourse-tag {
+          opacity: 0.75;
+        }
+        &:hover {
+          border: 1px solid rgba(var(--primary-rgb), 0.25);
+          .discourse-tag {
+            opacity: 1;
+          }
+        }
+      }
+      &:hover {
+        background-color: var(--secondary);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(var(--primary-rgb), 0.18);
+        a.title:not(.badge-notification),
+        a.topic-excerpt {
+          color: var(--primary) !important;
+        }
+      }
+      .topic-list-data.main-link {
+        width: 63%;
+        order: 2;
+      }
+      .topic-list-data.posters {
+        width: 7%;
+        min-width: 66px;
+        order: 1;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a:not(:first-of-type) {
+          display: none;
+        }
+        a {
+          display: none; /* Hide all <a> elements by default */
+        }
+        a:first-child {
+          display: block;
+          position: relative;
+          
+        }
+        a:last-child {
+          display: block;
+          position: relative;
+          right: 5px;
+          top: 20px;
+         
+        }
+      }
+      .topic-list-data.posts {
+        width: 15%;
+        order: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .topic-list-data.age {
+        width: 15%;
+        order: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .posters {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      .avatar {
+        width: 40px;
+        height: 40px;
+        
+      }
+      
+      a:has(.avatar.latest.single) {
+        right: 5px;
+        top: 5px;
+      }
+
+      a:not(:first-of-type) {
+        margin-left: -10px;
+        width: 30px;
+        .avatar {
+          background-color: var(--secondary);
+          border: 2px solid var(--secondary);
+        }
+      }
+    }
+  }
+}
+
+.topic-list-data.num.views {
+  display: none;
+}
+}
+
+// === RESPONSIVE BREAKPOINTS ===
+
+// Tablet: 2-column category grid
+@media (max-width: 960px) {
+  .category-boxes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+  }
+}
+
+// Phone landscape / small tablet: single column, simplified topic list
+@media (max-width: 768px) {
+  .category-boxes {
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+  }
+
+  .latest-topics-snippet .topic-list .topic-list-body .topic-list-item {
+    flex-wrap: wrap;
+    .topic-list-data.main-link {
+      width: 100%;
+      order: 1;
+    }
+    .topic-list-data.posters {
+      width: auto;
+      order: 2;
+    }
+    .topic-list-data.posts,
+    .topic-list-data.age {
+      width: auto;
+      order: 3;
+    }
+  }
+
+  .navigation-topics .container.list-container {
+    padding: 1em;
+  }
+}
+
+// Phone portrait: tighter spacing
+@media (max-width: 480px) {
+  .category-boxes .category-box .category-box-inner .category-details {
+    padding: 1em;
+  }
+
+  .d-header {
+    height: 4em;
+  }
+}

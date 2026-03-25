@@ -1,0 +1,10 @@
+{
+  "name": "bcf-discourse-theme",
+  "version": "1.0.0",
+  "repository": "https://github.com/Better-Conversations/bcf-discourse-theme",
+  "author": "Better Conversations Foundation",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.2.0"
+  }
+}

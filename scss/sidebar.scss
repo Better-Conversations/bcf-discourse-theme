@@ -1,0 +1,26 @@
+:root {
+  --d-sidebar-highlight-background: var(--tertiary-low);
+  --d-sidebar-highlight-hover-background: var(--tertiary);
+  --d-sidebar-header-icon-color: var(--tertiary);
+}
+
+#main-outlet-wrapper {
+  .sidebar-wrapper {
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 1em;
+    border: none;
+    border-radius: 0;
+    height: calc(
+      var(--composer-vh, var(--1dvh)) * 100 - var(--header-offset, 0px) - 3em
+    );
+    top: calc(var(--header-offset) + 1em);
+    .sidebar-container {
+      border: none;
+    }
+  }
+}
+
+.sidebar-footer-wrapper {
+  background: transparent;
+}

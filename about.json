@@ -1,0 +1,38 @@
+{
+  "name": "BCF-Discourse-Theme",
+  "about_url": "https://github.com/Better-Conversations/bcf-discourse-theme",
+  "license_url": null,
+  "color_schemes": {
+    "BCF-light": {
+      "primary": "454545",
+      "secondary": "ffffff",
+      "tertiary": "503F99",
+      "quaternary": "FBB050",
+      "header_background": "ffffff",
+      "header_primary": "111111",
+      "highlight": "cfff4d",
+      "danger": "EF404E",
+      "success": "A8D381",
+      "love": "EF404E",
+      "selected": "e9e9e9",
+      "hover": "f2f2f2"
+    },
+    "BCF-dark": {
+      "primary": "e0e0e0",
+      "secondary": "2d2d2d",
+      "tertiary": "B088C8",
+      "quaternary": "FBB050",
+      "header_background": "202020",
+      "header_primary": "e0e0e0",
+      "highlight": "A8D381",
+      "danger": "EF404E",
+      "success": "A8D381",
+      "love": "EF404E",
+      "selected": "1c302b",
+      "hover": "1c302b"
+    }
+  },
+  "components": [
+    "https://github.com/nolosb/discourse-featured-cards"
+  ]
+}
