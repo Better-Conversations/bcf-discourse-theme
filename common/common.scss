@@ -6,6 +6,18 @@
 //   Base font: Open Sans
 //   Heading font: Lato
 
+// === WCAG 2.4.7 Focus Visible ===
+// Global focus indicator for keyboard navigation
+*:focus-visible {
+  outline: 2px solid var(--tertiary) !important;
+  outline-offset: 2px;
+}
+
+// Suppress focus outline on mouse clicks (focus-visible handles keyboard only)
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
 .d-editor-textarea-wrapper,
 .select-kit-header {
   border-radius: var(--bcf-border-radius);
@@ -222,6 +234,12 @@ a.trigger-user-card {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
     }
+    // WCAG 2.4.7: keyboard focus on category cards
+    &:focus-within {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      outline: 2px solid var(--tertiary);
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -284,14 +302,18 @@ a.trigger-user-card {
   --d-nav-bg-color-active: var(--primary);
 }
 
-// Remove any borders/outlines that Discourse adds on top
+// Remove borders/shadows from nav pills but preserve keyboard focus
 .nav-pills > li > a,
 .nav-pills > li > a.active,
 .nav-pills > li button,
 .nav-pills > li button.active {
   border: none !important;
-  outline: none !important;
   box-shadow: none !important;
+}
+// Allow global :focus-visible to show on nav pills
+.nav-pills > li > a:focus:not(:focus-visible),
+.nav-pills > li button:focus:not(:focus-visible) {
+  outline: none !important;
 }
 
 // Only apply border-radius to dropdown headers — no colour overrides
@@ -473,6 +495,11 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
         a.topic-excerpt {
           color: var(--primary) !important;
         }
+      }
+      // WCAG 2.4.7: keyboard focus on topic list items
+      &:focus-within {
+        border-color: var(--tertiary);
+        box-shadow: 0 0 0 2px var(--tertiary);
       }
       .topic-list-data.main-link {
         width: 63%;
