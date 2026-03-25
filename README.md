@@ -65,16 +65,18 @@ These are saved for subsequent runs. After setup, every file save is instantly u
 
 **One-time setup:**
 
-1. Create a `dev` branch: `git checkout -b dev`
-2. In Discourse, install a second copy of the theme from Git using the **same repo URL** but set the branch to `dev`
+1. Create a `dev` branch: `git checkout -b dev` and push it: `git push -u origin dev`
+2. In Discourse admin, install a **separate theme** from Git using the same repo URL but set the branch to `dev`
 3. Name it **BCF-Dev-Theme**
 4. Add the same components (Category Icons, Homepage Feature) to the dev theme
 5. In your user preferences (**Preferences > Interface > Theme**), select **BCF-Dev-Theme** — only you will see it
 
+**Important:** You must create the dev theme in Discourse **before** running `discourse_theme watch`. The watch tool will ask you which theme to sync to — select the dev theme, not the production one.
+
 **Development workflow:**
 
 1. Work on the `dev` branch locally
-2. Run `discourse_theme watch .` pointed at the dev theme
+2. Run `discourse_theme watch .` and select the **BCF-Dev-Theme** when prompted
 3. Iterate — changes are visible only to you
 4. When happy, commit to `dev` and push
 5. Create a PR from `dev` → `main`
@@ -92,10 +94,43 @@ Use the CLI for iterative development, then commit once you're happy with the re
 
 The theme includes two colour palettes defined in `about.json`:
 
-- **BCF-light** — white background, purple (#503F99) tertiary, orange (#FBB050) quaternary
-- **BCF-dark** — dark background (#2d2d2d), lighter purple (#8b5ca2) tertiary
+### BCF-light
 
-These are created automatically when the theme is installed from Git. Set them in **Admin > Customize > Themes > BCF-Bespoke-Theme** under Colour Palette / Dark Color Palette.
+| Field | Value | Purpose |
+|---|---|---|
+| primary | `333333` | Dark grey text |
+| secondary | `ffffff` | White background |
+| tertiary | `503F99` | Purple — links, buttons, accents |
+| quaternary | `FBB050` | Orange — secondary accent |
+| header_background | `ffffff` | White header |
+| header_primary | `111111` | Near-black header text |
+| highlight | `5BC3B6` | Teal — input focus, search highlights |
+| danger | `C42D39` | Dark red — errors, delete actions |
+| success | `5B8A2C` | Dark green — success messages |
+| love | `C42D39` | Dark red — like button |
+| selected | `e9e9e9` | Light grey — selected items |
+| hover | `f2f2f2` | Very light grey — hover state |
+
+### BCF-dark
+
+| Field | Value | Purpose |
+|---|---|---|
+| primary | `e0e0e0` | Light text |
+| secondary | `2d2d2d` | Dark background |
+| tertiary | `8678C2` | Confident purple — links, buttons |
+| quaternary | `FBB050` | Orange — secondary accent |
+| header_background | `202020` | Darker header |
+| header_primary | `e0e0e0` | Light header text |
+| highlight | `5BC3B6` | Teal — input focus, search highlights |
+| danger | `D44A4A` | True red — errors, delete actions |
+| success | `A8D381` | Light green — success (dark text on top) |
+| love | `E05555` | Warm red — like button |
+| selected | `3d3555` | Dark purple tint — selected items |
+| hover | `3d3555` | Dark purple tint — hover state |
+
+These are created automatically when the theme is **first installed** from Git. Set them in **Admin > Appearance > Color palettes**.
+
+**⚠️ Important:** Changes to colour values in `about.json` are **not synced** by `discourse_theme watch` or Git updates. Colour palettes are only auto-created on initial theme install. If you change a colour value in `about.json`, you must **also update it manually** in Admin > Appearance > Color palettes. This applies to both the production and dev themes.
 
 ## 🔤 Fonts
 

@@ -6,6 +6,18 @@
 //   Base font: Open Sans
 //   Heading font: Lato
 
+// === WCAG 2.4.7 Focus Visible ===
+// Global focus indicator for keyboard navigation
+*:focus-visible {
+  outline: 2px solid var(--tertiary) !important;
+  outline-offset: 2px;
+}
+
+// Suppress focus outline on mouse clicks (focus-visible handles keyboard only)
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
 .d-editor-textarea-wrapper,
 .select-kit-header {
   border-radius: var(--bcf-border-radius);
@@ -126,7 +138,7 @@
 }
 
 .search-menu .search-context .show-help {
-  color: var(--primary-very-low);
+  color: var(--secondary);
 }
 
 .search-menu .search-input {
@@ -135,6 +147,30 @@
 
 .menu-panel .d-label {
   color: var(--primary);
+}
+
+// Underline content links for accessibility — helps distinguish from surrounding text
+// Scoped to content areas only, not nav, buttons, cards, or UI elements
+.cooked a,
+.topic-body a,
+.category-description a,
+.d-editor-preview a {
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--primary-rgb), 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  &:hover {
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+  }
+}
+
+// Remove underline from usernames in topics/posts
+.topic-body .names a,
+.topic-meta-data a,
+.avatar-flair-link,
+a.trigger-user-card {
+  text-decoration: none !important;
 }
 
 // Removed global a { color } override — was too aggressive, let Discourse handle link colours
@@ -148,7 +184,7 @@
     width: 100%;
     margin: 0;
     overflow: hidden;
-    border: 1px solid rgba(var(--primary-rgb), 0.12);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-left: 4px solid var(--category-badge-color);
     background: var(--secondary);
     border-radius: var(--bcf-border-radius);
@@ -163,6 +199,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: var(--primary);
 
         // Make category icon larger and sit above the name
         .badge-category__icon {
@@ -184,7 +221,7 @@
         // Lock icon: move to after category name
         .d-icon-lock {
           font-size: 0.8em;
-          color: var(--primary-medium);
+          color: rgba(var(--primary-rgb), 0.65);
           margin-left: 0.25em;
           order: 99;
         }
@@ -196,6 +233,12 @@
     &:hover {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
+    }
+    // WCAG 2.4.7: keyboard focus on category cards
+    &:focus-within {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      outline: 2px solid var(--tertiary);
+      outline-offset: 2px;
     }
   }
 }
@@ -259,14 +302,18 @@
   --d-nav-bg-color-active: var(--primary);
 }
 
-// Remove any borders/outlines that Discourse adds on top
+// Remove borders/shadows from nav pills but preserve keyboard focus
 .nav-pills > li > a,
 .nav-pills > li > a.active,
 .nav-pills > li button,
 .nav-pills > li button.active {
   border: none !important;
-  outline: none !important;
   box-shadow: none !important;
+}
+// Allow global :focus-visible to show on nav pills
+.nav-pills > li > a:focus:not(:focus-visible),
+.nav-pills > li button:focus:not(:focus-visible) {
+  outline: none !important;
 }
 
 // Only apply border-radius to dropdown headers — no colour overrides
@@ -422,7 +469,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
       display: flex;
       margin-bottom: 0.5em;
       background-color: var(--secondary);
-      border: 1px solid rgba(var(--primary-rgb), 0.15);
+      border: 1px solid rgba(var(--primary-rgb), 0.2);
       border-radius: var(--bcf-border-radius);
       position: relative;
       transition: box-shadow 0.2s ease, border-color 0.2s ease;
@@ -431,12 +478,12 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
       &.visited {
         border: 1px solid rgba(var(--primary-rgb), 0.1);
         .discourse-tag {
-          opacity: 0.75;
+          color: var(--primary-medium);
         }
         &:hover {
           border: 1px solid rgba(var(--primary-rgb), 0.25);
           .discourse-tag {
-            opacity: 1;
+            color: var(--primary);
           }
         }
       }
@@ -448,6 +495,11 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
         a.topic-excerpt {
           color: var(--primary) !important;
         }
+      }
+      // WCAG 2.4.7: keyboard focus on topic list items
+      &:focus-within {
+        border-color: var(--tertiary);
+        box-shadow: 0 0 0 2px var(--tertiary);
       }
       .topic-list-data.main-link {
         width: 63%;
