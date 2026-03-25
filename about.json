@@ -20,16 +20,16 @@
     "BCF-dark": {
       "primary": "e0e0e0",
       "secondary": "2d2d2d",
-      "tertiary": "B088C8",
+      "tertiary": "8678C2",
       "quaternary": "FBB050",
       "header_background": "202020",
       "header_primary": "e0e0e0",
-      "highlight": "fce775",
-      "danger": "F47078",
+      "highlight": "5BC3B6",
+      "danger": "D44A4A",
       "success": "A8D381",
-      "love": "F47078",
-      "selected": "1c302b",
-      "hover": "1c302b"
+      "love": "E05555",
+      "selected": "3d3555",
+      "hover": "3d3555"
     }
   },
   "components": [
