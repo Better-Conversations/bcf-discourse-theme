@@ -74,12 +74,16 @@ CSS changes often have unintended side effects in Discourse because:
 ## Brand Context
 
 - **BCF brand colour:** Teal (#54C4B6 light, #2E8B82 dark)
-- **Online discussions:** Purple (#503F99)
+- **Online discussions:** Purple (#503F99 light, #8678C2 dark)
 - **Course-related:** Orange (#FBB050)
 - **Partners:** Blue (#4495D1)
+- **Highlight/focus:** Teal (#5BC3B6) — used for both light and dark modes
+- **Danger:** #C42D39 (light), #D44A4A (dark)
+- **Love:** #C42D39 (light), #E05555 (dark)
 - **Full palette and design principles:** see BRAND-NOTES.md
 - **Fonts:** Lato (headings) + Open Sans (body) — chosen for dyslexia accessibility over brand-specified Livvic
 - **Related Linear issue for branding project:** BCF-678
+- **WCAG accessibility issue:** BCTT-783
 
 ## Testing Checklist
 

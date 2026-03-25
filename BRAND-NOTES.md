@@ -44,6 +44,11 @@ During the community platform redesign, several changes were made based on pract
 | Dark teal | `#2E8B82` | 46, 139, 130 | The foundation (darker variant for authority) |
 | Grey | `#8E99A4` | 142, 153, 164 | Admin/utility (site feedback) |
 | Dark | `#333333` | 51, 51, 51 | Staff/internal categories |
+| Dark purple | `#8678C2` | 134, 120, 194 | Dark mode tertiary (links, buttons) |
+| Dark red | `#C42D39` | 196, 45, 57 | Danger/errors (light mode, WCAG compliant) |
+| Dark red alt | `#D44A4A` | 212, 74, 74 | Danger (dark mode) |
+| Warm red | `#E05555` | 224, 85, 85 | Love/like (dark mode) |
+| Dark green | `#5B8A2C` | 91, 138, 44 | Success (light mode, WCAG compliant) |
 
 ### Removed
 
@@ -93,6 +98,7 @@ These principles emerged during the Discourse community platform redesign:
 3. **Clean over decorative** - subtle shadows, no gradient blobs, thin borders
 4. **Consistent weight** - buttons, borders, and icons should feel balanced
 5. **Brand colours for meaning** - each colour maps to a purpose (teal=foundation, orange=course, purple=authority, etc.)
+6. **WCAG 2.1 AA compliance** - all text must meet 4.5:1 contrast ratio, non-text elements 3:1. Links distinguished by underline not just colour. Focus indicators visible on all interactive elements. Touch targets minimum 44px on mobile.
 
 ## Technical Design Standards
 

@@ -94,8 +94,39 @@ Use the CLI for iterative development, then commit once you're happy with the re
 
 The theme includes two colour palettes defined in `about.json`:
 
-- **BCF-light** — primary #333333 (dark grey text), purple (#503F99) tertiary, orange (#FBB050) quaternary
-- **BCF-dark** — primary #e0e0e0 (light text), dark background (#2d2d2d), lighter purple (#B088C8) tertiary
+### BCF-light
+
+| Field | Value | Purpose |
+|---|---|---|
+| primary | `333333` | Dark grey text |
+| secondary | `ffffff` | White background |
+| tertiary | `503F99` | Purple — links, buttons, accents |
+| quaternary | `FBB050` | Orange — secondary accent |
+| header_background | `ffffff` | White header |
+| header_primary | `111111` | Near-black header text |
+| highlight | `5BC3B6` | Teal — input focus, search highlights |
+| danger | `C42D39` | Dark red — errors, delete actions |
+| success | `5B8A2C` | Dark green — success messages |
+| love | `C42D39` | Dark red — like button |
+| selected | `e9e9e9` | Light grey — selected items |
+| hover | `f2f2f2` | Very light grey — hover state |
+
+### BCF-dark
+
+| Field | Value | Purpose |
+|---|---|---|
+| primary | `e0e0e0` | Light text |
+| secondary | `2d2d2d` | Dark background |
+| tertiary | `8678C2` | Confident purple — links, buttons |
+| quaternary | `FBB050` | Orange — secondary accent |
+| header_background | `202020` | Darker header |
+| header_primary | `e0e0e0` | Light header text |
+| highlight | `5BC3B6` | Teal — input focus, search highlights |
+| danger | `D44A4A` | True red — errors, delete actions |
+| success | `A8D381` | Light green — success (dark text on top) |
+| love | `E05555` | Warm red — like button |
+| selected | `3d3555` | Dark purple tint — selected items |
+| hover | `3d3555` | Dark purple tint — hover state |
 
 These are created automatically when the theme is **first installed** from Git. Set them in **Admin > Appearance > Color palettes**.
 
