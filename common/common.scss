@@ -138,7 +138,7 @@
 }
 
 .search-menu .search-context .show-help {
-  color: var(--primary-very-low);
+  color: var(--secondary);
 }
 
 .search-menu .search-input {
@@ -156,7 +156,7 @@
 .category-description a,
 .d-editor-preview a {
   text-decoration: underline;
-  text-decoration-color: rgba(var(--primary-rgb), 0.3);
+  text-decoration-color: rgba(var(--primary-rgb), 0.5);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   &:hover {
@@ -221,7 +221,7 @@ a.trigger-user-card {
         // Lock icon: move to after category name
         .d-icon-lock {
           font-size: 0.8em;
-          color: var(--primary-medium);
+          color: rgba(var(--primary-rgb), 0.65);
           margin-left: 0.25em;
           order: 99;
         }
@@ -478,12 +478,12 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
       &.visited {
         border: 1px solid rgba(var(--primary-rgb), 0.1);
         .discourse-tag {
-          opacity: 0.75;
+          color: var(--primary-medium);
         }
         &:hover {
           border: 1px solid rgba(var(--primary-rgb), 0.25);
           .discourse-tag {
-            opacity: 1;
+            color: var(--primary);
           }
         }
       }
