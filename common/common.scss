@@ -150,6 +150,14 @@
   }
 }
 
+// Remove underline from usernames in topics/posts
+.topic-body .names a,
+.topic-meta-data a,
+.avatar-flair-link,
+a.trigger-user-card {
+  text-decoration: none !important;
+}
+
 // Removed global a { color } override — was too aggressive, let Discourse handle link colours
 
 .category-boxes {
