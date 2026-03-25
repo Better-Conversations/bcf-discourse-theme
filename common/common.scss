@@ -184,7 +184,7 @@ a.trigger-user-card {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    border: 1px solid rgba(var(--primary-rgb), 0.12);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-left: 4px solid var(--category-badge-color);
     background: var(--secondary);
     border-radius: var(--bcf-border-radius);
@@ -469,7 +469,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
       display: flex;
       margin-bottom: 0.5em;
       background-color: var(--secondary);
-      border: 1px solid rgba(var(--primary-rgb), 0.15);
+      border: 1px solid rgba(var(--primary-rgb), 0.2);
       border-radius: var(--bcf-border-radius);
       position: relative;
       transition: box-shadow 0.2s ease, border-color 0.2s ease;

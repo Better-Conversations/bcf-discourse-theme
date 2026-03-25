@@ -7,3 +7,13 @@
 #main-outlet {
   padding: 0 0.5em;
 }
+
+// WCAG 2.5.5: minimum 44px touch targets on mobile
+.avatar {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+summary.select-kit-header {
+  min-height: 44px;
+}
