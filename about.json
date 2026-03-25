@@ -33,6 +33,9 @@
     }
   },
   "components": [
-    "https://github.com/nolosb/discourse-featured-cards"
+    "https://github.com/nolosb/discourse-featured-cards",
+    "https://github.com/discourse/discourse-category-icons",
+    "https://github.com/discourse/discourse-clickable-topic",
+    "https://github.com/discourse/discourse-category-groups-component"
   ]
 }
