@@ -137,6 +137,19 @@
   color: var(--primary);
 }
 
+// Underline content links for accessibility — helps distinguish from surrounding text
+// Scoped to content areas only, not nav, buttons, cards, or UI elements
+.cooked a,
+.topic-body a,
+.category-description a,
+.d-editor-preview a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
 // Removed global a { color } override — was too aggressive, let Discourse handle link colours
 
 .category-boxes {
